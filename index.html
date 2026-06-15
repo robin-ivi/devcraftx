@@ -1757,7 +1757,7 @@
       <li><button onclick="showPage('courses')" id="nav-courses">Courses</button></li>
     </ul>
     <div class="nav-right">
-      <button class="nav-cert-btn" onclick="showPage('verify')">🎓 Verify Certificate</button>
+    <button class="nav-cert-btn" onclick="history.pushState(null,'','/verify'); showPage('verify')">🎓 Verify Certificate</button>
       <button class="nav-cta" onclick="showPage('courses')">Apply Now →</button>
     </div>
     <button class="nav-toggle" aria-label="Toggle menu" onclick="toggleMenu()">☰</button>
@@ -2394,6 +2394,22 @@
     }
     triggerReveal();
 
+    // Client-side routing: support /verify and /verify/:id URLs
+    function handleRouting() {
+      const p = window.location.pathname;
+      const seg = p.split('/').filter(Boolean);
+      if (seg[0] === 'verify') {
+        showPage('verify');
+        if (seg[1]) {
+          const id = decodeURIComponent(seg[1]).toUpperCase();
+          const input = document.getElementById('cert-id-input');
+          if (input) { input.value = id; setTimeout(verifyCert, 100); }
+        }
+      }
+    }
+    window.addEventListener('popstate', handleRouting);
+    handleRouting();
+
     // ── COURSE FILTER ──
     function filterCourses(btn, level) {
       document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -2510,7 +2526,8 @@
       const raw = document.getElementById('cert-id-input').value.trim().toUpperCase();
       document.getElementById('cert-result').classList.remove('show');
       document.getElementById('cert-not-found').classList.remove('show');
-      if (!raw) return;
+      if (!raw) { history.replaceState(null,'','/verify'); return; }
+      history.replaceState(null,'','/verify/' + encodeURIComponent(raw));
 
       const data = certDB[raw];
       if (data) {
