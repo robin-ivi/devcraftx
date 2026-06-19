@@ -175,10 +175,9 @@ The DevCraftX platform is built with modern, scalable technologies:
 ## 📞 Contact & Support
 
 ### Get in Touch
-- **Email:** hello@devcraftx.com
-- **Support:** support@devcraftx.com
-- **Phone:** +1 (555) 123-4567
-
+- **Email:** info.devcraftx@gmail.com
+- **Support:** info.devcraftx@gmail.com
+- **Phone:** +91 63878 00143
 ### Quick Links
 - [FAQ](#) – Frequently asked questions
 - [Blog](#) – Industry insights and tutorials
