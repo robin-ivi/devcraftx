@@ -190,7 +190,7 @@ The DevCraftX platform is built with modern, scalable technologies:
 
 Interested in partnering with DevCraftX or sponsoring a program?
 
-📧 Contact: partnerships@devcraftx.com
+📧 Contact: info.devcraftx@gmail.com
 
 ---
 
