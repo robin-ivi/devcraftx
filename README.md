@@ -8,7 +8,7 @@
 
 Explore internships and summer training programs designed to accelerate your development journey.
 
-[Visit Platform](#) • [Explore Programs](#) • [Get Certificate](#)
+[Visit Platform](https://devcraftx.in/) • [Explore Programs](https://devcraftx.in/) • [Get Certificate](https://devcraftx.in/)
 
 ---
 
